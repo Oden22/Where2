@@ -1,0 +1,51 @@
+{% extends 'itinerary/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Restaurants</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1 class="mt-5 mb-3">Breakfast</h1>
+                    {% for rest in Breakfast_Resturants %}
+                    <h2 class="mt-5 mb-3">{{ rest.title }}</h2>
+                    <p class="mb-5"> {{ rest.description }} </p>
+                    <p class="mb-5"><strong>Cost/Rating:</strong> {{ rest.get_cost_display }}/{{ rest.rating }}</p>
+                    <p class="mb-5"><strong>Address:</strong> {{ rest.address1 }}<br>{{ rest.address2 }}</p>
+                    {% endfor%}
+
+                    <h1 class="mt-5 mb-3">Lunch</h1>
+                    {% for rest in Lunch_Resturants %}
+                    <h2 class="mt-5 mb-3">{{ rest.title }}</h2>
+                    <p class="mb-5"> {{ rest.description }} </p>
+                    <p class="mb-5"><strong>Cost/Rating:</strong> {{ rest.get_cost_display }}/{{ rest.rating }}</p>
+                    <p class="mb-5"><strong>Address:</strong> {{ rest.address1 }}<br>{{ rest.address2 }}</p>
+                    {% endfor%}
+
+                    <h1 class="mt-5 mb-3">Dinner</h1>
+                    {% for rest in Dinner_Resturants %}
+                    <h2 class="mt-5 mb-3">{{ rest.title }}</h2>
+                    <p class="mb-5"> {{ rest.description }} </p>
+                    <p class="mb-5"><strong>Cost/Rating:</strong> {{ rest.get_cost_display }}/{{ rest.rating }}</p>
+                    <p class="mb-5"><strong>Address:</strong> {{ rest.address1 }}<br>{{ rest.address2 }}</p>
+                    {% endfor%}
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of basic -->
+{% endblock %}

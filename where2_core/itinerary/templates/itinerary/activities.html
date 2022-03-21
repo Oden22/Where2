@@ -1,0 +1,35 @@
+{% extends 'itinerary/main.html' %}
+{% load static %}
+{% block content %}
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Moreton Bay Activities</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1 class="mt-5 mb-3">Activities List</h1>
+                    {% for act in Activities %}
+                    <h2 class="mt-5 mb-3">{{ act.title }}</h2>
+                    <p class="mb-5"> {{ act.description }} </p>
+                    <p class="mb-5"><strong>Cost:</strong> {{ act.get_cost_display }} </p>
+                    <p class="mb-5"><strong>Address:</strong> {{ act.address1 }}<br>{{ act.address2 }}</p>
+
+                    {% endfor%}
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of basic -->
+{% endblock %}

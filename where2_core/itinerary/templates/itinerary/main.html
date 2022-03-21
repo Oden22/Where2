@@ -1,0 +1,174 @@
+{% extends 'itinerary/base.html' %}
+{% load static %}
+
+{% block content %}
+ <!-- Header -->
+ <header id="header" class="header">
+    <div class="header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="h1-large">Where2</h1>
+                    <a class="btn-solid-lg" href=" {% url 'itinerary_current' %} ">Generate an itineary for today</a>
+                    <a class="btn-solid-lg" href=" {% url 'itinerary_full' %} ">Generate a full itineary for today</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of header-content -->
+    
+    <!-- Video Background -->
+    <video autoplay loop muted id="video-background" poster="images/header-background.jpg" playsinline>
+        <source src=" {% static 'images/header-background-video.mp4' %} " type="video/mp4" />
+    </video>
+    <!-- end of video background -->
+
+</header> <!-- end of header -->
+<!-- end of header -->
+
+    <!-- Introduction -->
+    <div id="introduction" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Discover the community</h2>
+                    <p class="p-heading">Learn about local events, activities and restaurants through a dynamically created itineary</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="fas fa-utensils"></span>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Restaurants</h4>
+                            <div class="card-text">Experience the local culinary experience with a generated Itineary or view local Restraunts in the Restaurants page</div>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="fas fa-running"></span>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Activities</h4>
+                            <div class="card-text">Generate an Itineary full of activities, or just view them in the Activities page.</div>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-icon">
+                            <span class="fas fa-calendar-week"></span>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Events</h4>
+                            <div class="card-text">Learn about local events in our future Events page</div>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of introduction -->
+
+    <!-- Details -->
+	<div class="split">
+		<div class="area-1">
+		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
+            <div class="container">    
+                <div class="row">
+                    <div class="col-lg-12">     
+                        
+                        <!-- Text Container -->
+                        <div class="text-container">
+                            <h2>Why feature your buisness on Where2?</h2>
+                            <p>Featuring your buisness on Where2 has a large amount of benefits and no downside!</p>
+                            <p><strong>FREE -</strong> Featuring your buisness on Where2 is free!</p>
+                            <p><strong>EXPOSURE -</strong> By adding your buisness to Where2 you are opening up a new avenue for potential customers to discover your buisness.</p>
+                            <p><strong>CONTACT US -</strong> <a href=" https://en.wikipedia.org/wiki/Placeholder ">Click Here</a></p>
+                        </div> <!-- end of text-container -->
+                        <!-- end of text container -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+		</div> <!-- end of area-2 -->
+    </div> <!-- end of split -->
+    <!-- end of details -->
+
+
+    <!-- Projects -->
+	<div id="projects" class="filter bg-gray">
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Some of our local Restaurants and Activities</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Filter -->
+                    <div class="button-group filters-button-group">
+                        <button class="button is-checked" data-filter="*">SHOW ALL</button>
+                        <button class="button" data-filter=".rest">Restaurants</button>
+                        <button class="button" data-filter=".act">Activity</button>
+                    </div> <!-- end of button group -->
+                    <div class="grid">
+                        <div class="element-item rest">
+                            <a href=" {% url 'resturants' %}  ">
+                                <img class="img-fluid" src=" {% static 'images/BeardyBar.jpg' %} " alt="Beardy's Bar and Kitchen">
+                                <p><strong>Beardy's Bar and Kitchen</strong> - Offering one of the best selections of Craft Beer in the area coupled with awesome burgers and a chilled atmosphere it is the perfect place to catch up, chill out or pig out. </p>
+                            </a>
+                        </div>
+                        <div class="element-item act">
+                            <a href=" {% url 'activities' %} ">
+                                <img class="img-fluid" src=" {% static 'images/westfield.jpg' %} " alt="Westfield Shopping Centre">
+                                <p><strong>Westfield Shopping Centre</strong> - Westfield is your one-stop destination for shopping, leisure and entertainment. Discover 1000s of popular retailers in fashion, home, decor and more. </p>
+                            </a>
+                        </div>
+                        <div class="element-item rest">
+                            <a href=" {% url 'resturants' %}  ">
+                                <img class="img-fluid" src=" {% static 'images/mermaid.jpeg' %} " alt="Mermaids By the Bay">
+                                <p><strong>Mermaids By the Bay</strong> - Fish & Chips takeaway with a magnificent waterfront dine-in restaurant </p>
+                            </a>
+                        </div>
+                        <div class="element-item rest">
+                            <a href=" {% url 'resturants' %}  ">
+                                <img class="img-fluid" src=" {% static 'images/sea.png' %} " alt="alternative">
+                                <p><strong>Sea Salt and Vine</strong> - Our menu is contemporary Australian cuisine. We have some café favourites combined with a selection of modern affordable dishes. </p>
+                            </a>
+                        </div>
+                        <div class="element-item  rest">
+                            <a href=" {% url 'resturants' %}  ">
+                                <img class="img-fluid" src=" {% static 'images/bold.png' %} " alt="alternative">
+                                <p><strong>The Bold Bean Cafe</strong> - Boutique breakfast and coffee </p>
+                            </a>
+                        </div>
+                        <div class="element-item  act">
+                            <a href=" {% url 'activities' %} ">
+                                <img class="img-fluid" src=" {% static 'images/snap_fitness.jpg' %} " alt="Snap Fitness">
+                                <p><strong>Snap Fitness</strong> - If you looking for more than just a gym, Snap Fitness Deception Bay is that.</p>
+                            </a>
+                        </div>
+                    </div> <!-- end of grid -->
+                    <!-- end of filter -->
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+		</div> <!-- end of container -->
+    </div> <!-- end of filter -->
+    <!-- end of projects -->
+
+
+{% endblock %}
+
+    

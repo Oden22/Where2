@@ -1,0 +1,46 @@
+{% extends 'itinerary/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Your Itinerary:</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+  
+   
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h2>{{Weather}}</h2>    
+                        {% for item in Itinerary %}
+                            {% if item.genre == 'FO'%}
+                                {% if item.time_scene == 'BR' %}
+                                    <h1 class="mt-5 mb-3"> BreakFast </h1>
+                                {% elif item.time_scene == "LU" %}
+                                    <h1 class="mt-5 mb-3"> Lunch </h1>
+                                {% elif item.time_scene == "DI" %}
+                                    <h1 class="mt-5 mb-3"> Dinner </h1>
+                                {% endif %}
+                            {% elif item.genre == "AC" %}
+                                <h1 class="mt-5 mb-3"> Activity </h1>
+                            {% endif %}
+                        <h2 class="mt-5 mb-3">{{ item.title }}</h2>
+                        <p class="mb-5"> {{ item.description }} </p>
+                        <p class="mb-5">Cost: {{ item.get_cost_display }} </p>
+                        {% endfor%}
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of basic -->
+{% endblock %}
